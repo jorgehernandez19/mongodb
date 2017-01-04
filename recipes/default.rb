@@ -33,6 +33,13 @@ package 'mongodb-org' do
     action :install
 end
 
+template '/etc/mongod.conf' do
+  source 'mongod.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
+
 service 'mongod' do
     action [ :enable, :start]
 end
