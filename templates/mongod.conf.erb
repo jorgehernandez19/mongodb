@@ -7,7 +7,7 @@
 systemLog:
   destination: file
   logAppend: true
-  path: /var/log/mongodb/mongod-<%= hostname %>.log
+  path: /var/log/mongodb/mongod-<%= node['hostname'] %>.log
 
 # Where and how to store data.
 storage:
