@@ -30,6 +30,10 @@ elsif node['platform'] == 'ubuntu'
    apt_repository 'mongodb' do
       uri "http://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/3.4/multiverse/binary-amd64/"
       distribution 'xenial'
+      key 'C8068B11'
+      keyserver 'hkp://keyserver.ubuntu.com:80'
+      action :add
+      deb_src true
    end
 end
 
